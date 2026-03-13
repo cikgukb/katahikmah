@@ -19,10 +19,17 @@ if (!API_KEY) {
     process.exit(1);
 }
 
+const path = require('path');
+
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve the main application on root
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 const PIXABAY_API_KEY = process.env.PIXABAY_API_KEY;
 
