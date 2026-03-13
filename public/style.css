@@ -104,6 +104,10 @@ header {
 .logo img {
     height: 48px;
     width: auto;
+    border-radius: 12px;
+    background: white;
+    padding: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .logo span {
